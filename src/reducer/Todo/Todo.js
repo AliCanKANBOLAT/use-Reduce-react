@@ -1,5 +1,5 @@
-import { DECREMENT, INCREMENT } from "../counter";
 import { ADD_TODO, REMOVE_TODO, RESET } from "./ActionType";
+import { v4 as uuidv4 } from "uuid";
 
 export const initial = {
     todos: [],
@@ -7,11 +7,11 @@ export const initial = {
 }
 
 export const todoReducer = (state, action) => {
-    switch (action) {
-        case INCREMENT:
+    switch (action.type) {
+        case ADD_TODO:
             console.log(ADD_TODO,state)
-            return state
-        case DECREMENT:
+            return {...state, todos:[...state.todos, {id : uuidv4() , title: action.payload}]}
+        case REMOVE_TODO:
         console.log(REMOVE_TODO,state)
             return state
         case RESET :
