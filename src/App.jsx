@@ -1,9 +1,10 @@
 //App.js
 import { useState, useReducer, useContext } from 'react'
-import { DECREMENT, INCREMENT, RESET, countReducer, initialCountState } from './reducer/count'
+import { DECREMENT, INCREMENT, RESET, countReducer, initialCountState } from './reducer/counter'
 import About from './About'
 import { SiteContext } from './Context/SiteContext'
 import ContextAboutPage from './ContextAboutPage'
+import AddToDo from './AdToDo'
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
 
   return (
     <>
+    <AddToDo />
+    <hr />
      <h2>Count::: {state}</h2>
       <button onClick={() => dispatch(INCREMENT)}>Artir</button>
      <button onClick={() => dispatch(DECREMENT)}>Azalt</button>

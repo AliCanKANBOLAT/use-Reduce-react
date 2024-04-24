@@ -1,8 +1,8 @@
 //About.jsx
 
 import { useReducer } from "react"
-import { DECREMENT, INCREMENT, RESET, countReducer } from "./reducer"
-import { initialCountState } from "./reducer/count"
+import { DECREMENT, INCREMENT, RESET, countReducer } from "./reducer/counter"
+import { initialCountState } from "./reducer/counter/count"
 import ContextAboutPage from "./ContextAboutPage"
 
 
