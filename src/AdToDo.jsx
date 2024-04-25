@@ -1,6 +1,6 @@
 import { useReducer } from "react"
 import { initial, todoReducer } from "./reducer/Todo/Todo"
-import { ADD_TODO } from "./reducer/Todo"
+import { ADD_TODO, REMOVE_TODO } from "./reducer/Todo"
 
 export default function AddToDo () {
 
@@ -19,7 +19,12 @@ export default function AddToDo () {
                 <button type="submit">Ekle</button>
         </form>
         <ul>
-        {state?.todos.map((item, ) =><li key={item.id}>{item.id} {item.title}</li>)}
+        {state?.todos.map((item, ) =>
+        <li key={item.id}
+        onClick={()=> dispatch({type: REMOVE_TODO, payload: item.id})}
+        >
+            {item.id} {item.title}
+            </li>)}
         </ul>
         </>
     )
